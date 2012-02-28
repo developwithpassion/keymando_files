@@ -69,5 +69,5 @@ grab_tab_button_press("GoToMeeting Screen Share","Grab Tab Stop Button")
 standard_window_button_press("GoToMeeting Mute All Attendess","Attendee List Mute All Button")
 standard_window_button_press("GoToMeeting Unmute All Attendess","Attendee List Unmute All Button")
 
-["Main Screen","All Screens"].each{|item| command_to_share_screen(item)}
-(2..(NSScreen.screens.count)).each{|item| command_to_share_screen("Screen #{item}")}
+["Main Screen","All Screens"].each{|item| screen_share(item)}
+(2..(NSScreen.screens.count)).each{|item| screen_share("Screen #{item}")}
