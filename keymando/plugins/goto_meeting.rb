@@ -53,9 +53,21 @@ Command.to_run :description => "GoToMeeting Make Presenter" do
   end
 end
 
+def screen_share(screen_description)
+  Command.to_run :description => "GotoMeeting Share #{screen_description}" do
+    add_block do
+      search = goto_meeting.main_window.find
+      search.first_item_matching(:role => Matches.partial("popup"),:description => Matches.exact("Screen Sharing Screen Selector")).press
+      search.first_item_matching(:role => Matches.partial("menuitem"),:title => Matches.exact(screen_description)).press
+    end
+  end
+end
+
 
 grab_tab_button_press("GoToMeeting Mute Me","Grab Tab Mute Button")
 grab_tab_button_press("GoToMeeting Screen Share","Grab Tab Stop Button")
 standard_window_button_press("GoToMeeting Mute All Attendess","Attendee List Mute All Button")
 standard_window_button_press("GoToMeeting Unmute All Attendess","Attendee List Unmute All Button")
 
+["Main Screen","All Screens"].each{|item| command_to_share_screen(item)}
+(2..(NSScreen.screens.count)).each{|item| command_to_share_screen("Screen #{item}")}
