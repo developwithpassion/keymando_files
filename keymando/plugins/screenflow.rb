@@ -9,6 +9,6 @@ Command.to_run :description => "Screenflow Start New Recording" do
     sleep(1)
     helper = Accessibility::Gateway.get_application_by_name "ScreenFlowHelper"
     window = helper.find.first_item_matching(:role => Matches.partial("window"),:title => Matches.exact("ScreenFlow"))
-    window.find.first_item_matching(:identifier => Matches.exact("_NS:78")).press
+    window.find.first_item_matching(:identifier => Matches.exact("_NS:14")).press
   end
 end
