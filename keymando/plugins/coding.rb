@@ -29,7 +29,7 @@ Command.to_run :description => "Code - Keymando" do
     LaunchApp.new.run_using(OpenStruct.new(:original => "/Applications/Utilities/Terminal.app"))
     sleep(2)
     type_command("unset TMUX")
-    type_command("tmux<Enter>")
+    type_command("tmux")
     rename_current_pane("keymando")
     cd(KEYMANDO_SOURCE_ROOT)
     split_window("h")
