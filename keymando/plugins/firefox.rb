@@ -1,3 +1,3 @@
-Command.to_run :description => "Vimperator Passthrough Mode" do
-  add send_keys("<Shift-Escape>")
+Command.to_run :description => "Pentadactyl Passthrough Mode" do
+  add send_keys("<Ctrl-z>")
 end
