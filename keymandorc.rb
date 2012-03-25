@@ -16,5 +16,5 @@ map "<Cmd-0>", "<Cmd-Shift-D>"
 map "<Cmd-o>",RunLastCommand.instance
 map "<Cmd- >", launch_app
 map "<Cmd-i>", RunHistoryItem.instance
-map "<Cmd-p>", hit_a_hint
+map "<Cmd-p>", UiControls.instance
 map "<Cmd-y>", run_registered_command
