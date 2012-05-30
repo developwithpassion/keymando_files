@@ -33,8 +33,26 @@ module Accessibility
     end
 
     def click_center
+      mouse_focused_behaviour do
+        MouseMacros.left_click
+      end
+    end
+
+    def right_click
+      mouse_focused_behaviour do
+        MouseMacros.right_click
+      end
+    end
+
+    def double_click
+      mouse_focused_behaviour do
+        DoubleClick.instance.run
+      end
+    end
+
+    def mouse_focused_behaviour(&block)
       MouseMacros.move_mouse(self.center.x,self.center.y)
-      MouseMacros.left_click
+      yield
     end
   end
 end

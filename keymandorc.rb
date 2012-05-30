@@ -18,3 +18,7 @@ map "<Cmd- >", launch_app
 map "<Cmd-i>", RunHistoryItem.instance
 map "<Cmd-p>", UiControls.instance
 map "<Cmd-y>", run_registered_command
+
+%w/q w/.each do|key|
+  map "<Cmd-#{key}>",noop
+end
