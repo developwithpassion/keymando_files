@@ -4,12 +4,6 @@ class RunMenuItem
   end
 end
 
-class RunACommand
-  def run_using(item)
-    item.run
-  end
-end
-
 class CallPhone
   def initialize(skype_app)
     @skype = skype_app

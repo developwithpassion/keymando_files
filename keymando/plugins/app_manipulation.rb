@@ -30,37 +30,33 @@ Command.to_run :description => "Show current app menu items" do
   end
 end
 
-def current_app_windows
-  Command.to_run :description => "Show current app windows" do
-    add_block do
-      app = Accessibility::Gateway.get_active_application
-      index = 0
-      windows = app.windows.map{|item| index+=1;DisplayItem.new(item,"#{index} - #{item.title}")}.to_a
-      trigger_item_with(windows,RaiseWindow.new)
-    end
+Command.to_run :description => "Show current app windows",:key => :current_app_windows do
+  add_block do
+    app = Accessibility::Gateway.get_active_application
+    index = 0
+    windows = app.windows.map{|item| index+=1;DisplayItem.new(item,"#{index} - #{item.title}")}.to_a
+    trigger_item_with(windows,RaiseWindow.new)
   end
 end
 
-def run_registered_command
-  command "Run Registered Command" do
-    trigger_item_with(Commands.items,RunACommand.new)
+Command.to_run :description => "Run Registered Command",:key => :run_registered_command do
+  add_block do
+    trigger_item_with(Commands.items.dup,RunACommand.new)
   end
 end
 
-
-def launch_app
+Command.to_run :description => 'Launch Application',:key => :launch_app do
   apps = []
   ["/Applications", "/Developer/Applications","/System/Library/CoreServices"].each do|catalog|
     find_all_items(catalog,".app",3){|item| apps << item}
   end
-
-  command "Launch Application" do
+  add_block do
     trigger_item_with(apps,LaunchApp.new)
   end
 end
 
-def trigger_app
-  command "Focus Application" do
+Command.to_run :description => "Focus Application",:key => :trigger_app do
+  add_block do
     apps = NSWorkspace.sharedWorkspace.runningApplications.select{|app| app.activationPolicy == NSApplicationActivationPolicyRegular}.map{|app| DisplayItem.new(app,"#{app.localizedName}")}.to_a
     trigger_item_with(apps,FocusApp.new)
   end
