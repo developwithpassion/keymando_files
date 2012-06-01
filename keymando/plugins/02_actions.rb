@@ -11,7 +11,6 @@ class CallPhone
 
 end
 
-
 class LaunchItem
   def run_using(item)
     NSTask.launchedTaskWithLaunchPath("/usr/bin/open",arguments:[item.original])

@@ -18,15 +18,6 @@ Command.to_run :description => "Launch Preference Pane" do
 end
 
 
-Command.to_run :description => "Show current app menu items" do
-  add_block do
-    app = Accessibility::Gateway.get_active_application
-    app.front_most = true
-    trigger_item_with(app.all_menu_items,RunMenuItem.new)
-  end
-end
-
-
 Command.to_run :description => 'Launch Application',:key => :launch_app do
   apps = []
   ["/Applications", "/Developer/Applications","/System/Library/CoreServices"].each do|catalog|
@@ -37,13 +28,3 @@ Command.to_run :description => 'Launch Application',:key => :launch_app do
   end
 end
 
-Command.to_run :description => "Press Button On UI" do
-  add_block do
-    action = Proc.new do|element|
-      if Matches.partial('button').matches(element.role)
-        element.run_action(:press)
-      end
-    end
-    ui_controls :element_action => action
-  end
-end
