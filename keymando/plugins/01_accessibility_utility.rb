@@ -1,21 +1,3 @@
-module AccessibilityUtility
-  class DisplayItem
-    attr_accessor :original
-    def initialize(original,display)
-      @original = original
-      @display = display
-    end
-
-    def to_s
-      return @display
-    end
-
-    def method_missing(name,*args,&block)
-      @original.send(name,args,block)
-    end
-  end
-end
-
 module Accessibility
   class Element
     include AccessibilityUtility

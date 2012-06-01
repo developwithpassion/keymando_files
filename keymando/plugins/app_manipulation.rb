@@ -18,9 +18,6 @@ Command.to_run :description => "Launch Preference Pane" do
   end
 end
 
-Command.to_run :description => "Quicksilver" do
-  add send_keys_and_pause("<Cmd-1>")
-end
 
 Command.to_run :description => "Show current app menu items" do
   add_block do
@@ -30,20 +27,6 @@ Command.to_run :description => "Show current app menu items" do
   end
 end
 
-Command.to_run :description => "Show current app windows",:key => :current_app_windows do
-  add_block do
-    app = Accessibility::Gateway.get_active_application
-    index = 0
-    windows = app.windows.map{|item| index+=1;DisplayItem.new(item,"#{index} - #{item.title}")}.to_a
-    trigger_item_with(windows,RaiseWindow.new)
-  end
-end
-
-Command.to_run :description => "Run Registered Command",:key => :run_registered_command do
-  add_block do
-    trigger_item_with(Commands.items.dup,RunACommand.new)
-  end
-end
 
 Command.to_run :description => 'Launch Application',:key => :launch_app do
   apps = []
@@ -52,12 +35,5 @@ Command.to_run :description => 'Launch Application',:key => :launch_app do
   end
   add_block do
     trigger_item_with(apps,LaunchApp.new)
-  end
-end
-
-Command.to_run :description => "Focus Application",:key => :trigger_app do
-  add_block do
-    apps = NSWorkspace.sharedWorkspace.runningApplications.select{|app| app.activationPolicy == NSApplicationActivationPolicyRegular}.map{|app| DisplayItem.new(app,"#{app.localizedName}")}.to_a
-    trigger_item_with(apps,FocusApp.new)
   end
 end
