@@ -1,5 +1,3 @@
-include AccessibilityUtility
-
 Command.to_run :description => "GMail Send New Mail" do
   add send_keys("<Shift-Tab>" * 6)
 end

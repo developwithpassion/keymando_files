@@ -1,6 +1,5 @@
 module Accessibility
   class Element
-    include AccessibilityUtility
     def all_menu_items
       menus = self.menu_bar.find.all_items_matching(:role => Matches.partial("menuitem")).map{|item| DisplayItem.new(item,(item.title == nil ? "" : item.title))}.select{|item| item.to_s != ""}
 

@@ -1,4 +1,3 @@
-include AccessibilityUtility
 require 'find'
 
 def find_all_items(path,extension,depth = 2)

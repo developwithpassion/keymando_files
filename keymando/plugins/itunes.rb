@@ -1,6 +1,5 @@
 framework 'Foundation'
 framework 'ScriptingBridge'
-include AccessibilityUtility
  
 
 def itunes_button(name_reg_ex)
