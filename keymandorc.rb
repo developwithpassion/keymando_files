@@ -13,10 +13,11 @@ map "<Cmd-,>", "<Shift-Tab>"
 map "<Cmd-n>", "<Ctrl-n>"
 map "<Cmd-r>", Commands[:right_click]
 map "<Cmd-0>", "<Cmd-Shift-D>"
-map "<Cmd-o>", RunLastCommand.instance
+map "<Cmd-o>", Commands[:run_last_command]
 map "<Cmd- >", Commands[:launch_app]
 map "<Cmd-i>", Commands[:run_history_item]
-map "<Cmd-p>", UiControls.instance
+map "<Cmd-p>", Commands[:press_button_on_ui]
+map ";uic", Commands[:ui_controls]
 map "<Cmd-y>", Commands[:run_registered_command]
 
 %w/q w/.each do|key|

@@ -36,3 +36,14 @@ Command.to_run :description => 'Launch Application',:key => :launch_app do
     trigger_item_with(apps,LaunchApp.new)
   end
 end
+
+Command.to_run :description => "Press Button On UI" do
+  add_block do
+    action = Proc.new do|element|
+      if Matches.partial('button').matches(element.role)
+        element.run_action(:press)
+      end
+    end
+    ui_controls :element_action => action
+  end
+end
