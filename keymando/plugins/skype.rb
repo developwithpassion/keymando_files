@@ -6,14 +6,14 @@ def press_call_phone_button
   return :app => app,:success => call_phone != nil
 end
 
-Command.to_run :description => "Skype Call Phones - My Numbers" do
+Command.define "Skype Call Phones - My Numbers" do
   add_block do
     result = press_call_phone_button
     trigger_item_with(@@phone_numbers,CallPhone.new(result[:app])) if result[:success]
   end
 end
 
-Command.to_run :description => "Skype Call Phones" do
+Command.define "Skype Call Phones" do
   add_block do
     number = prompt("Which Number?")
     if number != nil
@@ -23,7 +23,7 @@ Command.to_run :description => "Skype Call Phones" do
   end
 end
 
-Command.to_run :description => "Skype Hang Up" do
+Command.define "Skype Hang Up" do
   add_block do
     app = Accessibility::Gateway.get_application_by_name "skype"
     app.front_most = true
@@ -32,7 +32,7 @@ Command.to_run :description => "Skype Hang Up" do
   end
 end
 
-Command.to_run :description => "Skype Login" do
+Command.define "Skype Login" do
   add_block do
     app = Accessibility::Gateway.get_application_by_name "skype"
     unless app == nil

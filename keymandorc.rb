@@ -14,16 +14,19 @@ map "<Cmd-n>", "<Ctrl-n>"
 map "<Cmd-r>", Commands[:right_click]
 map "<Cmd-0>", "<Cmd-Shift-D>"
 map "<Cmd-o>", Commands[:run_last_command]
-map "<Cmd- >", Commands[:launch_app]
+map "<Cmd- >", Commands[:run_registered_command]
 map "<Cmd-i>", Commands[:run_history_item]
-map "<Cmd-y>", Commands[:run_registered_command]
 map "<Cmd-p>", Commands[:press_button_on_ui]
 
 map ";uic", Commands[:ui_controls]
 map ";lc", Commands[:left_click_element]
 map ";rc", Commands[:right_click_element]
-map ";dc", Commands[:double_click]
+map ";dc", Commands[:double_click_element]
 map ";mi", Commands[:show_current_app_menu_items]
+
+ApplicationLauncher.register('/Applications')
+ApplicationLauncher.register('/System/Library/CoreServices')
+ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane')
 
 %w/q w/.each do|key|
   map "<Cmd-#{key}>",noop

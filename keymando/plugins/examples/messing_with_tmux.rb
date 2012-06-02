@@ -24,7 +24,7 @@ def cd(directory)
   type_command("cd #{directory}")
 end
 
-Command.to_run :description => "Code - Keymando" do
+Command.define "Code - Keymando" do
   add_block do
     LaunchApp.new.run_using(OpenStruct.new(:original => "/Applications/Utilities/Terminal.app"))
     sleep(2)

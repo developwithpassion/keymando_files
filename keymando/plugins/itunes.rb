@@ -9,7 +9,7 @@ def itunes_button(name_reg_ex)
 end
 
 def itunes_command_for_button(name,name_reg_ex)
-  Command.to_run :description => name do
+  Command.define name do
     add_block do
       itunes_button(name_reg_ex).press
     end
@@ -26,7 +26,7 @@ class Track
   end
 end
 
-Command.to_run :description => "Browse Tracks" do
+Command.define "Browse Tracks" do
   add_block do
     itunes = SBApplication.applicationWithBundleIdentifier("com.apple.iTunes")
     library = itunes.sources.find{|s| s.name == "Library"}.playlists.find{|list| list.name == "Music"}

@@ -17,12 +17,6 @@ class LaunchItem
   end
 end
 
-class LaunchApp
-  def run_using(item)
-    NSWorkspace.sharedWorkspace.launchApplication(item.original)
-  end
-end
-
 class PlayTrack
   def run_using(item)
     item.track.playOnce(true)
