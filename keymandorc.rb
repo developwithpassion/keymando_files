@@ -17,7 +17,8 @@ map "<Cmd-n>", "<Ctrl-n>"
 map "<Cmd-r>", Commands[:right_click]
 map "<Cmd-0>", "<Cmd-Shift-D>"
 map "<Cmd-o>", Commands[:run_last_command]
-map "<Cmd- >", Commands[:run_registered_command]
+map "<Cmd- >", Commands[:launch_application]
+map "<Cmd-y>", Commands[:run_registered_command]
 map "<Cmd-i>", Commands[:run_history_item]
 map "<Cmd-p>", Commands[:press_button_on_ui]
 
@@ -27,6 +28,6 @@ map ";rc", Commands[:right_click_element]
 map ";dc", Commands[:double_click_element]
 map ";mi", Commands[:show_current_app_menu_items]
 
-ApplicationLauncher.register('/Applications')
-ApplicationLauncher.register('/System/Library/CoreServices')
-ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane')
+ApplicationLauncher.register('/Applications',:category => :app)
+ApplicationLauncher.register('/System/Library/CoreServices',:category => :app)
+ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane',:category => :pref_pane)

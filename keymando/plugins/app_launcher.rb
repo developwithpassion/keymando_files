@@ -2,7 +2,7 @@ class ApplicationLauncher
   class << self
     def register(path, options={})
       Finder.find(path,options) do|item|
-        Command.define item.to_s do
+        Command.define item.to_s,options do
           add_block do
             LaunchItem.new.run_using(item)
           end
