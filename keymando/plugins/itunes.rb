@@ -1,7 +1,6 @@
 framework 'Foundation'
 framework 'ScriptingBridge'
  
-
 def itunes_button(name_reg_ex)
   app = Accessibility::Gateway.get_application_by_name "itunes"
   button = app.menu_bar.find.first_item_matching(:title => Matches.regex(name_reg_ex))

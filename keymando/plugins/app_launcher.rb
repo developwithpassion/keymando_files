@@ -1,6 +1,4 @@
-class ApplicationLauncher < Plugin
-  requires_version '1.0.4'
-
+class ApplicationLauncher
   class << self
     def register(path, options={})
       Finder.find(path,options) do|item|

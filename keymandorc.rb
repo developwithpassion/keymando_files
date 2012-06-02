@@ -1,4 +1,7 @@
 toggle "<Cmd-9>"
+map "<Cmd-q>", noop
+map "<Cmd-w>", noop
+
 map "<Cmd-e>", "<Escape>"
 map "<Cmd-Shift-d>", "<Cmd-Shift-Tab>"
 map "<Cmd-d>", Commands[:current_app_windows]
@@ -27,7 +30,3 @@ map ";mi", Commands[:show_current_app_menu_items]
 ApplicationLauncher.register('/Applications')
 ApplicationLauncher.register('/System/Library/CoreServices')
 ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane')
-
-%w/q w/.each do|key|
-  map "<Cmd-#{key}>",noop
-end
