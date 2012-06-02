@@ -21,11 +21,13 @@ map "<Cmd- >", Commands.run_registered_command
 map "<Cmd-i>", Commands.run_history_item
 map "<Cmd-p>", Commands.press_button_on_ui
 
-map ";uic", Commands.ui_controls
-map ";lc", Commands.left_click_element
-map ";rc", Commands.right_click_element
-map ";dc", Commands.double_click_element
-map ";mi", Commands.show_current_app_menu_items
+except /(iTerm|MacVim)/ do
+  map ";uic", Commands.ui_controls
+  map ";lc", Commands.left_click_element
+  map ";rc", Commands.right_click_element
+  map ";dc", Commands.double_click_element
+  map ";mi", Commands.show_current_app_menu_items
+end
 
 ApplicationLauncher.register('/Applications',:category => :app)
 ApplicationLauncher.register('/System/Library/CoreServices',:category => :app)
