@@ -1,5 +1,9 @@
 framework 'Foundation'
 framework 'ScriptingBridge'
+
+class ITunes < Plugin
+  requires_version '1.1.7'
+end
  
 def itunes_button(name_reg_ex)
   app = Accessibility::Gateway.get_application_by_name "itunes"
@@ -37,3 +41,4 @@ itunes_command_for_button("iTunes Previous Song",/Previous/)
 itunes_command_for_button("iTunes Next Song",/Next/)
 itunes_command_for_button("iTunes Increase Volume",/Increase Volume/)
 itunes_command_for_button("Decrease iTunes Volume",/Decrease Volume/)
+

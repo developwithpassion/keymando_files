@@ -1,3 +1,7 @@
+class ScreenFlow < Plugin
+  requires_version '1.1.7'
+end
+
 command "Screenflow Stop Recording" do
   send_keys("<Cmd-Shift-2>").run
 end

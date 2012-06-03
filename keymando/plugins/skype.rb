@@ -1,3 +1,7 @@
+class Skype < Plugin
+  requires_version '1.1.7'
+end
+
 def press_call_phone_button
   app = Accessibility::Gateway.get_application_by_name "skype"
   app.front_most = true

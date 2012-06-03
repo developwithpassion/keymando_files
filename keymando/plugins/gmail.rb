@@ -1,3 +1,7 @@
+class GMail < Plugin
+  requires_version '1.1.7'
+end
+
 command "GMail Send New Mail" do
   send_keys("<Shift-Tab>" * 6).run
 end
