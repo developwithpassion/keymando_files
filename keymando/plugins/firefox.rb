@@ -1,3 +1,3 @@
-Command.define "Pentadactyl Passthrough Mode" do
-  add send_keys("<Ctrl-z>")
+command "Pentadactyl Passthrough Mode" do
+  send_keys("<Ctrl-z>").run
 end

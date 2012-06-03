@@ -1,11 +1,11 @@
-Command.define "Window hide current" do
-  add send_keys("<Cmd-w>")
+command "Window hide current" do
+  send_keys("<Cmd-w>").run
 end
 
-Command.define "Quit current application" do
-  add send_keys("<Cmd-q>")
+command "Quit current application" do
+  send_keys("<Cmd-q>").run
 end
 
-Command.define "Quicksilver" do
-  add send_keys_and_pause("<Cmd-1>")
+command "Quicksilver" do
+  send_keys_and_pause("<Cmd-1>").run
 end

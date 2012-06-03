@@ -1,15 +1,15 @@
-Command.define "GMail Send New Mail" do
-  add send_keys("<Shift-Tab>" * 6)
+command "GMail Send New Mail" do
+  send_keys("<Shift-Tab>" * 6).run
 end
 
-Command.define "GMail Send Reply Mail" do
-  add send_keys("<Shift-Tab>" * 5)
+command "GMail Send Reply Mail" do
+  send_keys("<Shift-Tab>" * 5).run
 end
 
-Command.define "GMail Discard New Mail" do
-  add send_keys("<Shift-Tab>" * 4)
+command "GMail Discard New Mail" do
+  send_keys("<Shift-Tab>" * 4).run
 end
 
-Command.define "GMail Discard Reply Mail" do
-  add send_keys("<Shift-Tab>" * 3)
+command "GMail Discard Reply Mail" do
+  send_keys("<Shift-Tab>" * 3).run
 end

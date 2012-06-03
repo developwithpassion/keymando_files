@@ -8,10 +8,8 @@ def itunes_button(name_reg_ex)
 end
 
 def itunes_command_for_button(name,name_reg_ex)
-  Command.define name do
-    add_block do
-      itunes_button(name_reg_ex).press
-    end
+  command name do
+    itunes_button(name_reg_ex).press
   end
 end
 
@@ -25,15 +23,12 @@ class Track
   end
 end
 
-Command.define "Browse Tracks" do
-  add_block do
-    itunes = SBApplication.applicationWithBundleIdentifier("com.apple.iTunes")
-    library = itunes.sources.find{|s| s.name == "Library"}.playlists.find{|list| list.name == "Music"}
-    tracks = library.tracks.map{|track| Track.new(track)}.to_a
-    trigger_item_with(tracks,PlayTrack.new)
-  end
+command "Browse Tracks" do
+  itunes = SBApplication.applicationWithBundleIdentifier("com.apple.iTunes")
+  library = itunes.sources.find{|s| s.name == "Library"}.playlists.find{|list| list.name == "Music"}
+  tracks = library.tracks.map{|track| Track.new(track)}.to_a
+  trigger_item_with(tracks,PlayTrack.new)
 end
-
 
 itunes_command_for_button("iTunes Play",/Play\s*space/)
 itunes_command_for_button("iTunes Pause",/Pause\s*space/)
