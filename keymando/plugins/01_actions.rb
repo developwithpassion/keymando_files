@@ -16,8 +16,3 @@ class CallPhone
   end
 end
 
-class PlayTrack
-  def run_using(item)
-    item.track.playOnce(true)
-  end
-end

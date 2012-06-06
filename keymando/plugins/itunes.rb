@@ -13,20 +13,16 @@ def itunes_command_for_button(name,name_reg_ex)
   end
 end
 
-class Track
-  attr_accessor :track
-  def initialize(track)
-    @track = track
-  end
-  def to_s
-    return @track.name
+class PlayTrack
+  def run_using(item)
+    item.original.playOnce(true)
   end
 end
 
 command "Browse Tracks" do
   itunes = SBApplication.applicationWithBundleIdentifier("com.apple.iTunes")
   library = itunes.sources.find{|s| s.name == "Library"}.playlists.find{|list| list.name == "Music"}
-  tracks = library.tracks.map{|track| Track.new(track)}.to_a
+  tracks = library.tracks.map{|track| DisplayItem.new(track,track.name)}.to_a
   trigger_item_with(tracks,PlayTrack.new)
 end
 

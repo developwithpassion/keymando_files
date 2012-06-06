@@ -3,10 +3,8 @@ class Finder
     extension = args.fetch(:extension,'.app')
     depth = args.fetch(:max_depth,2)
 
-    items = IO.popen("find #{path} -type d -iname '*#{extension}' -maxdepth #{depth}").lines.each do|app|
-      the_app = app.chomp
-      name = File.basename(the_app)
-      yield DisplayItem.new(the_app,File.basename(the_app).gsub(extension,""))
-    end
+    items = `find #{path} -type d -iname '*#{extension}' -maxdepth #{depth}`.chomp.split("\n").map{|item| DisplayItem.new(item,File.basename(item).gsub(extension,""))}
+    items.each{|item| yield item if block_given?}
+    items
   end
 end
