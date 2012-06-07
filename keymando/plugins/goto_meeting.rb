@@ -1,3 +1,7 @@
+class GoToMeeting < Plugin
+  requires_version '1.1.7'
+end
+
 def goto_meeting
   Accessibility::Gateway.get_application_by_partial_name "GoToMeeting"
 end

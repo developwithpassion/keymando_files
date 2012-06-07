@@ -1,3 +1,7 @@
+class AppLauncherPlugin < Plugin
+  requires_version '1.1.7'
+end
+
 class ApplicationLauncher
   class << self
     def register(path, options={})
