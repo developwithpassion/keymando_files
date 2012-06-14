@@ -1,5 +1,5 @@
 class FinderPlugin < Plugin
-  requires_version '1.1.7'
+  requires_version '1.1.4'
 end
 
 class Finder

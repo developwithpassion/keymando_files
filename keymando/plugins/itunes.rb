@@ -2,7 +2,7 @@ framework 'Foundation'
 framework 'ScriptingBridge'
 
 class ITunes < Plugin
-  requires_version '1.1.7'
+  requires_version '1.1.4'
 end
  
 def itunes_button(name_reg_ex)

@@ -1,5 +1,5 @@
 class Skype < Plugin
-  requires_version '1.1.7'
+  requires_version '1.1.4'
 end
 
 def press_call_phone_button

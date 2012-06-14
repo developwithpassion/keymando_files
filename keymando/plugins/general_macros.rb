@@ -1,5 +1,5 @@
 class GeneralMacros < Plugin
-  requires_version '1.1.7'
+  requires_version '1.1.4'
 end
 
 command "Window hide current" do

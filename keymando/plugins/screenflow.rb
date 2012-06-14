@@ -1,5 +1,5 @@
 class ScreenFlow < Plugin
-  requires_version '1.1.7'
+  requires_version '1.1.4'
 end
 
 command "Screenflow Stop Recording" do
