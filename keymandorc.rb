@@ -35,3 +35,4 @@ ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.p
 
 #use growl as the default notifier instead of alert dialogs
 MessageBoard.change_notifier_to(GrowlNotifier)
+
