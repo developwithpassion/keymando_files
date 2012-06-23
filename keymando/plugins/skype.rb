@@ -47,5 +47,3 @@ command "Skype Login" do
     search.first_item_matching(:role => Matches.partial("button"),:title => Matches.exact("Sign me in")).press
   end
 end
-
-# blah
