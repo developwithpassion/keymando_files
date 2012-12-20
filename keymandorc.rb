@@ -34,5 +34,5 @@ ApplicationLauncher.register('/System/Library/CoreServices',:category => :app)
 ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane',:category => :pref_pane)
 
 #use growl as the default notifier instead of alert dialogs
-MessageBoard.change_notifier_to(GrowlNotifier)
+# MessageBoard.change_notifier_to(GrowlNotifier)
 
