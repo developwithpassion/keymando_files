@@ -3,5 +3,5 @@ class Firefox < Plugin
 end
 
 command "Pentadactyl Passthrough Mode" do
-  send_keys("<Ctrl-z>").run
+  send_keys("<Shift-Escape>").run
 end
