@@ -1,4 +1,4 @@
-toggle "<Cmd-9>"
+toggle "<cmd-9>"
 map "<Cmd-q>", noop
 map "<Cmd-w>", noop
 
