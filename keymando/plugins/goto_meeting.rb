@@ -40,7 +40,7 @@ def standard_window_button_press(description,button_description)
 end
 
 command "GoToMeeting Share My WebCam" do
-  goto_meeting.main_window.find.first_item_matching(:role => Matches.partial("busyindicator"),:identifier => Matches.exact("_NS:44")).click_center
+  goto_meeting.main_window.find.first_item_matching(:role => Matches.partial("busyindicator"),:identifier => Matches.exact("_NS:43")).click_center
 end
 
 command "GoToMeeting Make Presenter" do
