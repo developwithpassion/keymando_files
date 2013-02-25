@@ -2,6 +2,10 @@ class GeneralMacros < Plugin
   requires_version '1.1.4'
 end
 
+command "Toggle the dock" do
+  send_keys("<Cmd-Option-d>").run
+end
+
 command "Window hide current" do
   send_keys("<Cmd-w>").run
 end
