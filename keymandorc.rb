@@ -29,10 +29,16 @@ except /(iTerm|MacVim)/ do
   map ";mi", Commands.show_current_app_menu_items
 end
 
+only /Neat/ do
+  map ";ei", Commands[:neat_receipts_edit_item]
+  map ";ci", Commands[:neat_receipts_combine_selected_items]
+  map ";si", Commands[:neat_receipts_save_item]
+end
+
 ApplicationLauncher.register('/Applications',:category => :app)
 ApplicationLauncher.register('/System/Library/CoreServices',:category => :app)
 ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane',:category => :pref_pane)
 
 #use growl as the default notifier instead of alert dialogs
-# MessageBoard.change_notifier_to(GrowlNotifier)
+MessageBoard.change_notifier_to(GrowlNotifier)
 
