@@ -12,4 +12,4 @@ It is a good example of using the following features of Keymando:
 
 ##Configuring
 
-Run the rake link task to symlink the files in this repository into your home folder. Otherwise, just manually run the Keymando configuration and specify the links to the files and folders.
+Run the bootstrap script to symlink the files in this repository into your home folder. Otherwise, just manually run the Keymando configuration and specify the links to the files and folders.

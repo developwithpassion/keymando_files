@@ -1,6 +1,17 @@
 class Skype < Plugin
   requires_version '1.1.4'
 end
+class SkypeNumber
+  attr_accessor :number
+
+  def initialize(number)
+    @number = number
+  end
+
+  def to_s
+    @number
+  end
+end
 
 def press_call_phone_button
   app = Accessibility::Gateway.get_application_by_name "skype"
@@ -19,7 +30,7 @@ command "Skype Call Phones" do
   number = prompt("Which Number?")
   if number != nil
     result = press_call_phone_button
-    CallPhone.new(result[:app]).run_using(PhoneNumber.new(number,"")) if result[:success]
+    CallPhone.new(result[:app]).run_using(SkypeNumber.new(number)) if result[:success]
   end
 end
 
@@ -44,6 +55,7 @@ command "Skype Login" do
     password.focused = true
     send_keys(@@passwords[:skype]).run
     sleep(1)
+    user_name.focused = true
     search.first_item_matching(:role => Matches.partial("button"),:title => Matches.regex(/Sign.*in/)).press
   end
 end
