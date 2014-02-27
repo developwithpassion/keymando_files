@@ -27,11 +27,11 @@ command "Browse Tracks" do
   trigger_item_with(tracks,PlayTrack.new)
 end
 
-itunes_command_for_button("iTunes Play",/Play\s*space/)
-itunes_command_for_button("iTunes Pause",/Pause\s*space/)
-itunes_command_for_button("iTunes Stop",/Stop\s*space/)
-itunes_command_for_button("iTunes Previous Song",/^Previous/)
-itunes_command_for_button("iTunes Next Song",/^Next/)
-itunes_command_for_button("iTunes Increase Volume",/Increase Volume/)
-itunes_command_for_button("Decrease iTunes Volume",/Decrease Volume/)
+itunes_command_for_button("iTunes Play",/Play\s*space/i)
+itunes_command_for_button("iTunes Pause",/Pause\s*space/i)
+itunes_command_for_button("iTunes Stop",/Stop\s*space/i)
+itunes_command_for_button("iTunes Previous Song",/^Previous/i)
+itunes_command_for_button("iTunes Next Song",/^Next/i)
+itunes_command_for_button("iTunes Increase Volume",/Increase Volume/i)
+itunes_command_for_button("Decrease iTunes Volume",/Decrease Volume/i)
 
