@@ -38,6 +38,7 @@ only /Neat/ do
 end
 
 ApplicationLauncher.register('/Applications',:category => :app)
+ApplicationLauncher.register('/Applications/Xcode.app/Contents/Applications',:category => :app)
 ApplicationLauncher.register('/System/Library/CoreServices',:category => :app)
 ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane',:category => :pref_pane)
 

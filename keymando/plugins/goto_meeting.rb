@@ -16,7 +16,6 @@ command "GoToMeeting Login" do
   search.first_item_matching(:role => Matches.partial("button"),:title => Matches.exact("Login")).press
 end
 
-
 def get_grab_tab_button(button_title)
   grab_window = goto_meeting.find.first_item_matching(:role => Matches.partial("window"),:title => Matches.exact("GrabTab"))
   return grab_window.find.first_item_matching(:role => Matches.partial("checkbox"),
@@ -40,7 +39,7 @@ def standard_window_button_press(description,button_description)
 end
 
 command "GoToMeeting Share My WebCam" do
-  goto_meeting.main_window.find.first_item_matching(:role => Matches.partial("busyindicator"),:identifier => Matches.exact("_NS:43")).click_center
+  goto_meeting.main_window.find.first_item_matching(:role => Matches.partial("busyindicator"),:identifier => Matches.exact("_NS:42")).click_center
 end
 
 command "GoToMeeting Make Presenter" do
@@ -54,7 +53,6 @@ def screen_share(screen_description)
     search.first_item_matching(:role => Matches.partial("menuitem"),:title => Matches.exact(screen_description)).press
   end
 end
-
 
 grab_tab_button_press("GoToMeeting Mute Me","Grab Tab Mute Button")
 grab_tab_button_press("GoToMeeting Screen Share","Grab Tab Stop Button")

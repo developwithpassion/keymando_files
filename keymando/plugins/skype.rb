@@ -27,11 +27,7 @@ command "Skype Call Phones - My Numbers" do
 end
 
 command "Skype Call Phones" do
-  number = prompt("Which Number?")
-  if number != nil
-    result = press_call_phone_button
-    CallPhone.new(result[:app]).run_using(SkypeNumber.new(number)) if result[:success]
-  end
+  press_call_phone_button
 end
 
 command "Skype Hang Up" do
