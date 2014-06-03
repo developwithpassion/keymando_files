@@ -28,8 +28,8 @@ except /(iTerm|MacVim)/ do
   map ";lc", Commands.left_click_element
   map ";rc", Commands.right_click_element
   map ";dc", Commands.double_click_element
-  map ";mi", Commands.show_current_app_menu_items
 end
+map ";mi", Commands.show_current_app_menu_items
 
 only /Neat/ do
   map ";ei", Commands[:neat_receipts_edit_item]
@@ -41,7 +41,6 @@ ApplicationLauncher.register('/Applications',:category => :app)
 ApplicationLauncher.register('/Applications/Xcode.app/Contents/Applications',:category => :app)
 ApplicationLauncher.register('/System/Library/CoreServices',:category => :app)
 ApplicationLauncher.register('/System/Library/PreferencePanes',:extension => '.prefPane',:category => :pref_pane)
-
 #use growl as the default notifier instead of alert dialogs
 # MessageBoard.change_notifier_to(GrowlNotifier)
 
