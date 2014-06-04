@@ -52,6 +52,7 @@ command "Skype Login" do
     send_keys(@@passwords[:skype]).run
     sleep(1)
     user_name.focused = true
-    search.first_item_matching(:role => Matches.partial("button"),:title => Matches.regex(/Sign.*in/)).press
+    # search.first_item_matching(:role => Matches.partial("button"),:title => Matches.regex(/Sign.*in/)).press
+    search.first_item_matching(:role => Matches.exact("AXButton")).press
   end
 end
