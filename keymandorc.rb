@@ -28,9 +28,9 @@ except /(iTerm|MacVim)/ do
   map ";lc", Commands.left_click_element
   map ";rc", Commands.right_click_element
   map ";dc", Commands.double_click_element
+  map ";mi", Commands.show_current_app_menu_items
+  map ";q", Commands.quit_current_application
 end
-map ";mi", Commands.show_current_app_menu_items
-map ";q", Commands.quit_current_application
 
 only /Neat/ do
   map ";ei", Commands[:neat_receipts_edit_item]
