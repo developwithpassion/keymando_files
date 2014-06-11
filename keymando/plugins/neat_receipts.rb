@@ -31,5 +31,3 @@ command "Neat Receipts Combine Selected Items" do
     combine_menu_item.press
   end
 end
-
-
