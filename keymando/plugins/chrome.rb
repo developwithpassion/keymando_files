@@ -1,7 +1,7 @@
 class Chrome < Plugin
   requires_version '1.1.4'
 
-  def app
+  def chrome
     app = Accessibility::Gateway.get_active_application
     app.front_most = true
     app
