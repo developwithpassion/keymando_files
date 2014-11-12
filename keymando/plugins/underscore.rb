@@ -16,6 +16,5 @@ class Underscore < Plugin
 
     map "<Cmd-u>", lambda{ Underscore.toggle }
   end
-
 end
 

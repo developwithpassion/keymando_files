@@ -22,7 +22,7 @@ map "<Cmd-p>", Commands.press_button_on_ui
 
 map "<Cmd-d>", Commands.current_app_windows
 map "<Cmd-f>", Commands.trigger_app
-#
+
 except /(iTerm|MacVim)/ do
   map ";uic", Commands.ui_controls
   map ";lc", Commands.left_click_element
@@ -30,6 +30,9 @@ except /(iTerm|MacVim)/ do
   map ";dc", Commands.double_click_element
   map ";mi", Commands.show_current_app_menu_items
   map ";q", Commands.quit_current_application
+
+  map ";wc", Commands[:window_move_to_center]
+  map ";wfs", Commands[:window_move_to_full_screen]
 end
 
 only /Neat/ do

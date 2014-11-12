@@ -15,5 +15,5 @@ command "Quit current application" do
 end
 
 command "Quicksilver" do
-  send_keys_and_pause("<Cmd-1>").run
+  send_keys_and_pause("<Cmd-;>").run
 end
